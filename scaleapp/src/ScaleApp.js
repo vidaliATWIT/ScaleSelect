@@ -6,7 +6,7 @@ function ScaleApp() {
     const [message, setMessage] = useState('');
   
     useEffect(() => {
-      axios.get('http://localhost:8000/api/generate-scale/')
+      axios.get('http://ec2-3-15-33-68.us-east-2.compute.amazonaws.com/api/generate-scale/')
         .then(response => {
           setMessage(response.data.message);
         })
@@ -17,7 +17,7 @@ function ScaleApp() {
   
     const handleClick = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/generate-scale/');
+        const response = await axios.get('http://ec2-3-15-33-68.us-east-2.compute.amazonaws.com/api/generate-scale/');
         setMessage(response.data.message); 
         console.log('Button clicked and message fetched!');
       } catch (error) {
